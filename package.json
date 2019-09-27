@@ -2,14 +2,30 @@
   "name": "jest-test",
   "version": "1.0.0",
   "description": "",
+  "keywords": [
+    "jest",
+    "axios",
+    "testing-tools",
+    "commonjs",
+    "esmodules"
+  ],
+  "author": "Bruce Taylor",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "Bruce Taylor",
-  "license": "ISC",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
   "devDependencies": {
+    "@babel/preset-env": "^7.6.2",
+    "babel-jest": "^24.9.0",
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
   }
 }

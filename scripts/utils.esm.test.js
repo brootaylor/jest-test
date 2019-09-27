@@ -1,31 +1,31 @@
-// Using a CommonJS method here...
-const functions = require('./functions');
+// Using the ES Modules import method...
+import { utils } from './utils.esm';
 
 test('Adds 4 + 5 to equal 9', () => {
-    expect(functions.add(4, 5)).toBe(9); // Passes
-    // expect(functions.add(4, 5)).toBe(10); // Fails
+    expect(utils.add(4, 5)).toBe(9); // Passes
+    // expect(utils.add(4, 5)).toBe(10); // Fails
 });
 
 test('Adds 4 + 5 to NOT equal 9', () => {
-    expect(functions.add(4, 5)).not.toBe(11); // Passes
-    // expect(functions.add(4, 5)).not.toBe(9); // Fails
+    expect(utils.add(4, 5)).not.toBe(11); // Passes
+    // expect(utils.add(4, 5)).not.toBe(9); // Fails
 });
 
 // toBeNull
-test('Should be null', () => {
-    expect(functions.isNull()).toBeNull(); // Passes
+test('Should be null value', () => {
+    expect(utils.isNull()).toBeNull(); // Passes
 });
 
 // toBeFalsy
-test('Should be falsy', () => {
-    // expect(functions.checkValue(null)).toBeFalsy(); // Passes
-    expect(functions.checkValue(undefined)).toBeFalsy(); // Passes
-    // expect(functions.checkValue(2)).toBeFalsy(); // Fails
+test('Should be falsy value', () => {
+    // expect(utils.checkValue(null)).toBeFalsy(); // Passes
+    expect(utils.checkValue(undefined)).toBeFalsy(); // Passes
+    // expect(utils.checkValue(2)).toBeFalsy(); // Fails
 });
 
 // toStrictEqual
 test('User should be "Bruce Taylor"', () => {
-    expect(functions.createUser()).toStrictEqual({
+    expect(utils.createUser()).toStrictEqual({
         firstName: 'Bruce',
         lastName: 'Taylor'
     });

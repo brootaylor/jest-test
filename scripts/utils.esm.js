@@ -1,4 +1,4 @@
-const functions = {
+const utils = {
     add: (num1, num2) => num1 + num2,
     isNull: () => null,
     checkValue: x => x,
@@ -9,5 +9,7 @@ const functions = {
     }
 };
 
-// Using a CommonJS method here...
-module.exports = functions;
+// Using the ES Modules export method...
+export {
+    utils
+};
