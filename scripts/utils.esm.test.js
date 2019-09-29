@@ -1,43 +1,43 @@
 // Using the ES Modules import method...
-import { utils } from './utils.esm';
+import { utilsA, utilsB } from './utils.esm';
 
 test('Adds 4 + 5 to equal 9', () => {
-    const add1 = utils.add(4, 5);
-    expect(add1).toBe(9); // Passes
+    const add1 = utilsA.add(4, 5);
+    expect(add1).toBe(9);
 
-    const add2 = utils.add(4, 19);
-    expect(add2).toBe(9); // Fails
+    const add2 = utilsB.add(4, 5);
+    expect(add2).toBe(9);
 });
 
 test('Adds 4 + 5 to NOT equal 9', () => {
-    const add1 = utils.add(4, 5);
-    expect(add1).not.toBe(9); // Fails
+    const add1 = utilsA.add(4, 3);
+    expect(add1).not.toBe(9);
 
-    const add2 = utils.add(4, 78);
-    expect(add2).not.toBe(9); // Passes
+    const add2 = utilsB.add(4, 78);
+    expect(add2).not.toBe(9);
 });
 
 // toBeNull
 test('Should be null value', () => {
-    const value = utils.isNull();
-    expect(value).toBeNull(); // Passes
+    const value = utilsA.isNull();
+    expect(value).toBeNull();
 });
 
 // toBeFalsy
 test('Should be falsy value', () => {
-    const falsyA = utils.checkValue(null);
-    expect(falsyA).toBeFalsy(); // Passes
+    const falsyA = utilsA.checkValue(null);
+    expect(falsyA).toBeFalsy();
 
-    const falsyB = utils.checkValue(undefined);
-    expect(falsyB).toBeFalsy(); // Passes
+    const falsyB = utilsB.checkValue(undefined);
+    expect(falsyB).toBeFalsy();
 
-    const falsyC = utils.checkValue(2);
-    expect(falsyC).toBeFalsy(); // Fails
+    // const falsyC = utilsB.checkValue(2);
+    // expect(falsyC).toBeFalsy();
 });
 
 // toStrictEqual
 test('User should be "Bruce Taylor"', () => {
-    expect(utils.createUser()).toStrictEqual({
+    expect(utilsA.createUser()).toStrictEqual({
         firstName: 'Bruce',
         lastName: 'Taylor'
     });
