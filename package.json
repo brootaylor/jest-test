@@ -18,17 +18,19 @@
   "scripts": {
     "testUnit": "jest --testPathIgnorePatterns='e2e.test.js'",
     "testE2E": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch --testPathIgnorePatterns='e2e.test.js'"
   },
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
-    }
+    },
+    "preset": "jest-puppeteer"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.6.2",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
+    "jest-puppeteer": "^4.3.0",
     "puppeteer": "^1.20.0"
   },
   "dependencies": {
